@@ -1,6 +1,6 @@
 # Overview
 
-Nesreen Tool is an automated tender-reading and supplier-quoting productivity application designed specifically for the oil & gas procurement industry. Built for Arab Engineering & Distribution Company, this Streamlit-based tool streamlines the procurement process by automating document parsing, supplier management, email generation, and deadline tracking for bulk materials including piping, valves, flanges, fittings, bolts, gaskets, and finned tubes.
+Hamada Tool is an automated tender-reading and supplier-quoting productivity application designed specifically for the oil & gas procurement industry. Built for Arab Engineering & Distribution Company, this Streamlit-based tool streamlines the procurement process by automating document parsing, supplier management, email generation, and deadline tracking for bulk materials including piping, valves, flanges, fittings, bolts, gaskets, and finned tubes.
 
 The application provides a comprehensive end-to-end solution that ingests tender documents in multiple formats (PDF, Word, Excel, text), extracts key information, manages a database of 100+ suppliers across different regions, generates professional email drafts for quotation requests, and automatically calculates supplier deadlines based on client requirements.
 

@@ -2,15 +2,21 @@ import streamlit as st
 import pandas as pd
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 from modules.document_parser import DocumentParser
 from modules.supplier_manager import SupplierManager
 from modules.email_generator import EmailGenerator
 from modules.deadline_calculator import DeadlineCalculator
 from modules.order_tracker import OrderTracker
+from modules.data_collector import DataCollector
+from modules.terms_conditions import TermsConditions
 
 # Page configuration
 st.set_page_config(
-    page_title="Nesreen Tool - Oil & Gas Procurement",
+    page_title="Hamada Tool - Oil & Gas Procurement",
     page_icon="⚙️",
     layout="wide"
 )
@@ -27,9 +33,18 @@ if 'deadline_calculator' not in st.session_state:
 
 if 'order_tracker' not in st.session_state:
     st.session_state.order_tracker = OrderTracker()
+if 'data_collector' not in st.session_state:
+    st.session_state.data_collector = DataCollector()
+if 'terms_conditions' not in st.session_state:
+    st.session_state.terms_conditions = TermsConditions()
+
+# Check terms and conditions acceptance
+if not st.session_state.terms_conditions.check_terms_acceptance():
+    st.session_state.terms_conditions.show_terms_and_conditions()
+    st.stop()
 
 # Main title and description
-st.title("⚙️ Nesreen Tool")
+st.title("⚙️ Hamada Tool")
 st.subheader("Automated Tender-Reading & Supplier-Quoting Productivity Tool")
 st.markdown("**Arab Engineering & Distribution Company** - Oil & Gas Procurement Solutions")
 
@@ -39,6 +54,25 @@ page = st.sidebar.selectbox(
     "Select Module",
     ["📄 Document Processing", "🏢 Supplier Management", "📧 Email Generation", "⏰ Deadline Management", "📋 Order Tracking", "📊 Dashboard"]
 )
+
+# Sidebar additional options
+st.sidebar.markdown("---")
+st.sidebar.markdown("### Additional Options")
+
+if st.sidebar.button("📄 View Terms & Conditions"):
+    st.session_state.terms_conditions.show_terms_and_conditions()
+
+if st.sidebar.button("🔒 Privacy Policy"):
+    st.session_state.terms_conditions.show_privacy_policy()
+
+# Show data collection status
+st.sidebar.markdown("---")
+st.sidebar.markdown("### Data Collection Status")
+if st.session_state.terms_conditions.check_terms_acceptance():
+    st.sidebar.success("✅ Terms Accepted")
+    st.sidebar.success("✅ Data Collection Enabled")
+else:
+    st.sidebar.error("❌ Terms Not Accepted")
 
 # Material categories
 MATERIAL_CATEGORIES = ["piping", "valves", "flanges", "fittings", "bolts", "gaskets", "finned tubes"]
@@ -97,6 +131,15 @@ if page == "📄 Document Processing":
                     
                     # Store processed data in session state for use in other modules
                     st.session_state.processed_documents = results
+                    
+                    # Log document processing activity
+                    for result in results:
+                        file_info = {
+                            'source': result.get('source', 'unknown'),
+                            'file_size': len(result.get('text', '')),
+                            'extraction_date': datetime.now().isoformat()
+                        }
+                        st.session_state.data_collector.log_document_processing(file_info, result)
                     
                     for i, result in enumerate(results):
                         with st.expander(f"📄 {result['source']}", expanded=True):
@@ -205,6 +248,15 @@ elif page == "🏢 Supplier Management":
             filtered_df = filtered_df[filtered_df['Material_Categories'].str.contains(category_filter, case=False, na=False)]
         if search_term:
             filtered_df = filtered_df[filtered_df['Company_Name'].str.contains(search_term, case=False, na=False)]
+        
+        # Log supplier search activity
+        search_criteria = {
+            'country_filter': country_filter,
+            'category_filter': category_filter,
+            'search_term': search_term,
+            'total_suppliers': len(suppliers_df)
+        }
+        st.session_state.data_collector.log_supplier_search(search_criteria, len(filtered_df))
         
         st.markdown(f"**Showing {len(filtered_df)} of {len(suppliers_df)} suppliers**")
         
@@ -505,6 +557,17 @@ elif page == "📧 Email Generation":
                                 # Store emails in session state for persistence
                                 st.session_state.generated_emails = emails
                                 
+                                # Log email generation activity
+                                email_data = {
+                                    'project_name': project_name,
+                                    'tender_reference': tender_reference,
+                                    'quote_deadline': quote_deadline.strftime('%Y-%m-%d'),
+                                    'materials': selected_categories,
+                                    'exclude_origins': exclude_origins,
+                                    'requirements_length': len(requirements)
+                                }
+                                st.session_state.data_collector.log_email_generation(email_data, len(filtered_suppliers))
+                                
                                 # Track the processed order
                                 supplier_categories = st.session_state.order_tracker.categorize_suppliers(emails)
                                 order_id = st.session_state.order_tracker.add_processed_order({
@@ -662,6 +725,13 @@ elif page == "⏰ Deadline Management":
                         st.info(f"📊 **Days until supplier deadline:** {supplier_days_remaining}")
                     else:
                         st.error("⚠️ Client deadline has already passed!")
+                    
+                    # Log deadline calculation activity
+                    st.session_state.data_collector.log_deadline_calculation(
+                        client_deadline.strftime('%Y-%m-%d'),
+                        supplier_deadline.strftime('%Y-%m-%d'),
+                        2  # Default buffer days
+                    )
         
         else:  # Parse from text
             deadline_text = st.text_area(
@@ -790,6 +860,18 @@ elif page == "📋 Order Tracking":
                                 success = st.session_state.order_tracker.update_order_status(selected_order, new_status, notes)
                                 if success:
                                     st.success("✅ Order updated successfully!")
+                                    
+                                    # Log order tracking activity
+                                    order_data = {
+                                        'order_id': selected_order,
+                                        'project_name': order_details['Project_Name'],
+                                        'old_status': order_details['Status'],
+                                        'new_status': new_status,
+                                        'materials': order_details['Materials'],
+                                        'total_suppliers': order_details['Total_Suppliers']
+                                    }
+                                    st.session_state.data_collector.log_order_tracking(order_data)
+                                    
                                     st.rerun()
                                 else:
                                     st.error("❌ Failed to update order.")
@@ -953,8 +1035,57 @@ elif page == "📊 Dashboard":
         compliance_df = pd.DataFrame(compliance_data)
         st.dataframe(compliance_df, use_container_width=True, hide_index=True)
         
-        # Recent activity placeholder
-        st.markdown("**📈 System Status**")
+        # Usage statistics
+        st.markdown("**📈 Usage Statistics**")
+        
+        # Get usage statistics from data collector
+        usage_stats = st.session_state.data_collector.get_usage_statistics()
+        
+        if usage_stats:
+            col1, col2, col3, col4 = st.columns(4)
+            
+            with col1:
+                st.metric(
+                    "Total Activities",
+                    usage_stats.get('total_activities', 0),
+                    help="Total user interactions logged"
+                )
+            
+            with col2:
+                doc_processed = usage_stats.get('activity_breakdown', {}).get('document_processed', 0)
+                st.metric(
+                    "Documents Processed",
+                    doc_processed,
+                    help="Number of documents processed"
+                )
+            
+            with col3:
+                emails_generated = usage_stats.get('activity_breakdown', {}).get('email_generated', 0)
+                st.metric(
+                    "Emails Generated",
+                    emails_generated,
+                    help="Number of email drafts created"
+                )
+            
+            with col4:
+                supplier_searches = usage_stats.get('activity_breakdown', {}).get('supplier_searched', 0)
+                st.metric(
+                    "Supplier Searches",
+                    supplier_searches,
+                    help="Number of supplier searches performed"
+                )
+            
+            # Activity breakdown chart
+            if usage_stats.get('activity_breakdown'):
+                st.markdown("**📊 Activity Breakdown**")
+                activity_df = pd.DataFrame(list(usage_stats['activity_breakdown'].items()), 
+                                         columns=['Activity', 'Count'])
+                st.bar_chart(activity_df.set_index('Activity'))
+        else:
+            st.info("📊 Usage statistics will appear here as you use the tool.")
+        
+        # System status
+        st.markdown("**🔧 System Status**")
         status_cols = st.columns(3)
         
         with status_cols[0]:
@@ -975,8 +1106,9 @@ st.markdown("---")
 st.markdown(
     """
     <div style='text-align: center; color: #666;'>
-        <p><strong>Nesreen Tool</strong> v1.0 | Arab Engineering & Distribution Company</p>
+        <p><strong>Hamada Tool</strong> v1.0 | Arab Engineering & Distribution Company</p>
         <p>Oil & Gas Procurement Solutions | Built with ❤️ using Streamlit</p>
+        <p><small>Data collection enabled for service improvement and AI training</small></p>
     </div>
     """,
     unsafe_allow_html=True
