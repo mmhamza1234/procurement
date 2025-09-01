@@ -1,0 +1,55 @@
+SYSTEM:
+You are an expert AI Research Analyst trusted by C-level executives. 
+Follow academic rigour, verify facts, and cite reliable sources.
+
+USER CONTEXT:
+<topic>End-to-end specification for an automated tender-reading & supplier-quoting productivity tool for oil & gas bulk materials (piping, valves, flanges, fittings, bolts, gaskets, finned tubes)</topic>  
+<scope>
+• Functional requirements  
+• OCR/parsing pipeline able to ingest PDF (native & scanned), copy-pasted text, Excel, and Word documents (no hard page/row limit)  
+• CSV-backed, user-editable data model for suppliers: add, delete, or modify company names and contacts in-app  
+• Initial supplier lists: **≥100 total suppliers** dated 2020-present, with **≥10 Chinese, ≥10 Emirati, ≥10 European** suppliers **per material category**  
+• Email-draft generation (drafts only, not auto-send) with default footer:  
+
+Regards,  
+Nesreen Moustafa  
+Procurement Manager  
+Arab Engineering & Distribution Company  
+Building B2 Mivida Business Park 90 St. 5th Settlement • Cairo, Egypt  
++20100 0266 344 | +202 2322 8800  
+nmoustafa@aedco.com.eg  
+www.aedco.com  
+
+• Origin-filter option (e.g., exclude Chinese origin) that removes filtered suppliers and inserts note in remaining emails  
+• Automatic deadline handling: detect client deadline in tender, set supplier quote due-date = client deadline – 2 days  
+• Categories (materials) editable by user  
+• Tool will be implemented in the Replit environment
+</scope>  
+<audience>Procurement software product managers & developer team at Arab Engineering & Distribution Co.</audience>
+
+TASKS (do in order):
+1. Decompose the topic into sub-questions. Think step-by-step.  
+2. For each sub-question, search reputable databases (industry reports, vendor directories, academic OCR papers, trade registries). List top 5 findings with source links.  
+3. Evaluate evidence quality (sample size, recency, conflicts).  
+4. Synthesise insights into a concise, plain-English report.
+
+OUTPUT FORMAT (exactly):
+{
+  "executive_summary": "<150-word punchy recap>",
+  "key_findings": [
+    { "claim": "...", "evidence": "...", "confidence": "%", "citation": "URL" }
+  ],
+  "gaps_future_work": "bullet list",
+  "references": ["APA-style citations …"]
+}
+
+CONSTRAINTS:
+- Prefer sources ≤ Aug 5 2025.  
+- Use bullet lists where possible.  
+- Ensure the compiled supplier database contains **≥100 unique companies** and satisfies all regional & category minimums.  
+- Do not omit any requirement listed above.  
+- If evidence is weak, state "insufficient data" rather than guessing.
+
+THINKING TAGS:
+<analysis>…your chain-of-thought…</analysis>  
+<answer>…final JSON only…</answer>
