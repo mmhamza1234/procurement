@@ -1,0 +1,251 @@
+**COMPREHENSIVE WEEKLY OIL & GAS NEWSLETTER GENERATION PROMPT**
+
+***
+
+**USER CONTEXT:**
+
+<topic>Weekly Oil & Gas information-only bullets for TWO editions:
+
+(1) Principals Edition (OEM partners such as Boldrocchi, Air Products, Veolia).
+
+(2) Egyptian Clients Edition (operators and EGPC/EGAS ecosystem) — includes light Global and Regional sections before Egypt.</topic>
+
+<scope>Last 7 days, cutoff every Monday 08:00 Africa/Cairo.</scope>
+
+<audience>Professional readers (executives, technical managers, owners/shareholders).</audience>
+
+***
+
+**RESEARCH & DATA GATHERING TASKS (do in order):**
+
+1) **Historical Analysis:** Read any "Previous Issues" appended after this prompt (see PAST ISSUES block). Extract prior headlines to avoid exact duplication. Only mark "Update:" if a story materially advanced (e.g., bid → award, FID taken, volumes revised).
+
+2) **Source Research:** Research developments within the last 7 days using authoritative sources: Argus, MEES, Reuters Oil, Platts, Upstream Online, company PRs, EGPC/EGAS/EEHC releases, SEC/EGX filings, GCC tender portals, LinkedIn posts. For rig counts use Baker Hughes (global) and TAM Oil or Egypt Oil & Gas (Egypt).
+
+3) **Content Compilation:** Compile bullets for TWO editions with the same Egypt sections but different prefaces:
+   -  Principals Edition: Egypt-only sections.
+   -  Egyptian Clients Edition: Market Snapshot, then light Global and Regional sections, then the Egypt sections.
+
+4) **Principals Edition Emphasis:** Opportunities matching OEM lines (air-cooled exchangers, fans, compressors, emissions/water/H₂). When relevant, add "OEM match: …" and include owner, scope, stage (RFI/RFQ/award), and bid/close dates if available.
+
+5) **Egyptian Clients Edition Emphasis:** Policy/regulatory circulars, gas/electricity pricing, load curtailment notices, operational outages/restorations at fields/refineries, supply/demand, and state-owned company updates.
+
+6) **Editorial Guidelines:** Minimize Israel-related deal coverage; include only if essential to Egypt. If included, place it as the last bullet in its section and keep wording strictly factual.
+
+7) **Content Standards:** Facts only. No forecasts/opinions. USD only (no EGP). Brent only (no WTI or crude grade deep-dives). All timestamps in Africa/Cairo. Inline links only (no footnotes).
+
+***
+
+**CONTENT STRUCTURE & SECTIONS:**
+
+**A) PRINCIPALS EDITION — Egypt only**
+1) Market Snapshot (bullets only)
+2) Upstream – Exploration & Production (Egypt)
+3) Midstream – Pipelines, Gas & LNG (Egypt)  
+4) Downstream – Refining & Petrochemicals (Egypt)
+5) Fertilizers (Egypt)
+6) Upstream Chemicals (Egypt)
+7) Projects (Egypt)
+
+**B) EGYPTIAN CLIENTS EDITION — Global/Regional, then Egypt**
+1) Market Snapshot (bullets only)
+2) Global (light) — exactly 3 bullets
+3) Regional — exactly 3 bullets (prioritize GCC + East Med; avoid Israel unless essential and place last)
+4) Upstream – Exploration & Production (Egypt)
+5) Midstream – Pipelines, Gas & LNG (Egypt)
+6) Downstream – Refining & Petrochemicals (Egypt) 
+7) Fertilizers (Egypt)
+8) Upstream Chemicals (Egypt)
+9) Projects (Egypt)
+
+***
+
+**MARKET SNAPSHOT REQUIREMENTS (required bullets for both editions):**
+
+-  **Brent Price:** Front-month price in USD — include exact price, timestamp "as of {HH:MM Africa/Cairo, DD Mon YYYY}", and inline source link (Reuters/Platts/Argus).
+-  **Global Rig Counts:** Oil-only and total (oil+gas) — latest available, timestamp + Baker Hughes link.
+-  **Egypt Rig Counts:** Oil-only and total — latest available, timestamp + TAM Oil or Egypt Oil & Gas link.
+(Do not mention Egyptian crude grade types.)
+
+***
+
+**PER-ITEM BULLET FORMAT (Sections after Market Snapshot):**
+
+Each bullet ≤50 words and must contain, where available:
+-  **Headline** (concise) — inline source link (primary; add a second reputable source only if needed).
+-  **Timestamp** (Africa/Cairo).
+-  **One-line takeaway** with key numbers (bbl/d, mmscf/d, kt/y; capacity; CAPEX USD; timeline/milestones; location/concession).
+-  **Counterparties** (owner/operator/EPC/EPCM/contractors).
+-  **For tenders/projects:** entity, tender ID, scope & key specs, submission deadline, pre-bid/site visit dates, stage (RFI/RFQ/award). Add "OEM match: …" when relevant (Principals Edition).
+
+***
+
+**BULLET COUNTS & FILL RULES:**
+
+-  **Egypt sections:** exactly 7 bullets per section.
+-  **Clients Edition extras:** Global = 3 bullets; Regional = 3 bullets.
+-  **If fewer qualifying items exist** in the 7-day window, append "Context:" bullets (clearly labeled) using items older than 7 days that are directly relevant to an active Egypt development (e.g., pending award).
+-  **Deduplication:** Apply across all sections and both editions. Use "Update:" only on material change.
+
+***
+
+**SOURCES & QUALITY STANDARDS:**
+
+-  **Primary sources preferred:** Official releases, filings. Otherwise use Argus/MEES/Reuters/Platts/Upstream.
+-  **Brent price:** Reputable market data source from the list above, with explicit timestamp.
+-  **Rig counts:** Baker Hughes (global); TAM Oil or Egypt Oil & Gas (Egypt). Latest figures only; do not compute WoW/YoY deltas.
+-  **Data quality:** If data is weak/unclear, state "insufficient data" and skip.
+
+***
+
+**HTML/EMAIL DESIGN OUTPUT SPECIFICATIONS:**
+
+**CRITICAL:** After gathering all content, you must output two complete, ready-to-use files:
+
+**1. HTML VERSION (Web Preview - No Logo)**
+**2. EML VERSION (Email Distribution - With AEDCO Logo)**
+
+**DESIGN REQUIREMENTS:**
+
+**Overall Structure:**
+-  Modern, professional newsletter design
+-  Clean typography using system fonts (-apple-system, 'Segoe UI', Roboto, Arial)
+-  Responsive email-safe CSS
+-  Background: Light gray (#f8f9fa)
+-  Main content: White container with rounded corners and shadow
+-  Maximum width: 700px, centered
+
+**Header Design:**
+-  Gradient background: linear-gradient(135deg, #0B3D91 0%, #1F2937 100%)
+-  White text on dark background
+-  HTML Version: Edition title only
+-  EML Version: AEDCO logo + Edition title (logo: `<img src="cid:aedco-logo" alt="AEDCO" style="width:120px;height:auto;margin-bottom:15px;">`)
+
+**Market Snapshot:**
+-  Special 3-column grid layout
+-  Each metric in its own card with centered text
+-  Large blue numbers, smaller gray labels
+-  Include: Brent Crude price, Global Rigs, Egypt Rigs
+
+**News Card System:**
+-  Each individual news item gets its own colored card
+-  8-color rotation system with matching backgrounds:
+  - Blue: #0B3D91 border, #eff6ff background
+  - Green: #10b981 border, #f0fdf4 background  
+  - Orange: #f59e0b border, #fef7f0 background
+  - Red: #ef4444 border, #fef2f2 background
+  - Purple: #8b5cf6 border, #f5f3ff background
+  - Cyan: #06b6d4 border, #f0f9ff background
+  - Yellow: #eab308 border, #fefce8 background
+  - Blue variant: #3b82f6 border, #eff6ff background
+
+**Layout Logic (CRITICAL):**
+-  2-column grid for news items
+-  If EVEN number of items: All items in 2-column pairs
+-  If ODD number of items: Last single item spans FULL WIDTH (never leave empty right column)
+-  Example with 7 items: [Item1][Item2] + [Item3][Item4] + [Item5][Item6] + [Item7 FULL WIDTH]
+
+**News Item Formatting:**
+-  Each card: 4px colored left border, matching light background gradient
+-  Title: Bold, blue (#0B3D91), 16px font, clear separation from content  
+-  Content: 15px font, normal weight, dark gray (#374151)
+-  Padding: 20px, rounded corners (12px)
+
+**Section Headers:**
+-  Large blue headings (#0B3D91)
+-  Clear spacing and hierarchy
+-  Italic descriptions below main headers
+
+**Footer:**
+-  Same gradient background as header
+-  Edition name, date, confidentiality notice
+-  Centered white text
+
+**EML-Specific Requirements:**
+-  Multipart/related MIME structure
+-  Logo attachment with Content-ID: <aedco-logo>
+-  Base64 placeholder for logo content
+-  Email-safe CSS (inline styles, no external dependencies)
+
+***
+
+**TECHNICAL SPECIFICATIONS:**
+
+**HTML Structure:**
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Email-safe CSS in <style> block -->
+</head>
+<body>
+    <!-- Newsletter content with proper table structure -->
+</body>
+</html>
+```
+
+**EML Structure:**
+```
+Date: [Proper RFC date]
+Message-ID: [Unique ID]
+Subject: [Encoded subject]
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary="newsletter_boundary"
+
+--newsletter_boundary
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+[HTML content with logo]
+
+--newsletter_boundary
+Content-Type: image/jpeg
+Content-ID: <aedco-logo>
+Content-Disposition: attachment; filename="aedco-logo.jpg"
+Content-Transfer-Encoding: base64
+
+[LOGO_PLACEHOLDER for base64 content]
+--newsletter_boundary--
+```
+
+**File Naming Convention:**
+-  HTML: `[Edition]-Newsletter-[DD-Mon-YYYY]-FINAL.html`
+-  EML: `[Edition]-Newsletter-[DD-Mon-YYYY]-FINAL.eml`
+
+***
+
+**MANDATORY OUTPUT FORMAT:**
+
+After completing research and content gathering, output exactly these 4 files:
+
+1. **Principals Edition HTML** (web preview, no logo)
+2. **Principals Edition EML** (email distribution, with logo)
+3. **Egyptian Clients Edition HTML** (web preview, no logo)  
+4. **Egyptian Clients Edition EML** (email distribution, with logo)
+
+**CONTENT PRESERVATION RULES:**
+-  NEVER summarize, delete, or change any gathered content
+-  NEVER modify section order or bullet counts
+-  NEVER merge or split news items
+-  NEVER alter headlines or key information
+-  Each bullet becomes exactly one colored card
+-  Maintain all technical details, dates, figures, and company names exactly as researched
+
+**QUALITY ASSURANCE:**
+-  Validate HTML syntax and email compatibility
+-  Verify color rotation is consistent
+-  Confirm layout handles odd/even item counts correctly
+-  Check that all gathered content appears in final output
+-  Ensure EML version includes proper logo placeholder
+-  Test that no content is lost or modified in conversion
+
+***
+
+**PAST ISSUES INTEGRATION:**
+If content after "--- PAST_ISSUES_START ---" is provided, use it for deduplication and "Update:" marking but NEVER to omit current week content.
+
+***
+
+This prompt will deliver both comprehensive research AND the complete, ready-to-distribute HTML/EML newsletter files matching your exact design specifications and weekly consistency requirements.

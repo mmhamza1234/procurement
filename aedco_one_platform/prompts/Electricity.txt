@@ -1,0 +1,169 @@
+**COMPREHENSIVE WEEKLY ELECTRICITY NEWSLETTER GENERATION PROMPT**
+
+---
+
+## **USER CONTEXT**
+
+**<topic>** Weekly **Electricity** information-only bullets for **TWO editions**:
+
+1. **Principals Edition** (OEM partners/categories: gas/steam turbines & HRSG, boilers/BOP, **transformers**, **HV switchgear/GIS**, **STATCOM/SVC**, **HVDC**, **SCADA/EMS/DMS/OT-cyber**, **smart meters/AMI**, **solar inverters & PV**, **wind turbines**, **BESS**, EPC of plants/substations/lines).
+2. **Egyptian Clients Edition** (MoERE, **EEHC**, **EETC**, **NREA**, EgyptERA, Distribution Companies, NUCA cities) — includes light **Global** and **Regional** sections before Egypt.
+
+**<scope>** **Last 7 days, cutoff = "now" (time of generation), Africa/Cairo.**
+**<audience>** Professional readers (executives, technical managers, owners/shareholders).
+
+---
+
+## **RESEARCH & DATA GATHERING TASKS (do in order)**
+
+1. **Historical Analysis**
+   Use any appended **PAST ISSUES** to deduplicate. Mark **"Update:"** only on material change (e.g., tender → award, FC signed, tariff revised, new COD).
+
+2. **Source Research (Electricity-specific)**
+
+   * **Official Egypt:** **MoERE**, **EEHC**, **EETC**, **EgyptERA**, **NREA**, Cabinet decisions, Governorate bulletins, Distribution Co. notices (North Cairo, Cairo, Canal, Middle, Upper, Behera, South Delta, North Delta, Alexandria).
+   * **Tenders/filings:** Egyptian Gov e-tenders, EETC procurement, EGX/SEC/ADGM filings (Elsewedy Electric, Orascom Construction, Hassan Allam, ACWA Power, Scatec, etc.).
+   * **Industry/global:** **IEA**, **IRENA**, **Ember**, **MEED**, **Zawya**, **Reuters MENA**, **PV Tech**, **Windpower Monthly**, **African Energy**, **Railway Gazette/IRJ** only if grid-rail interfaces are relevant.
+   * **Company PRs & LinkedIn** (OEMs/EPCs/IFIs).
+
+3. **Content Compilation**
+   Build **two editions** with identical Egypt sections:
+
+   * **Principals Edition:** **Egypt-only** sections.
+   * **Clients Edition:** **Market Snapshot**, then **Global (3)** and **Regional (3)**, then Egypt sections.
+
+4. **Principals Edition Emphasis**
+   Highlight opportunities matching OEM lines; add **"OEM match: …"** (e.g., "220 kV GIS, 500 kV transformers, STATCOM ±200 MVAr, SCADA/EMS, AMI 1M meters, 1.5 GW PV inverters, 250 MW/500 MWh BESS"). Include owner, scope, **stage (RFI/RFQ/award)**, bid/close dates.
+
+5. **Egyptian Clients Edition Emphasis**
+   **Policy & tariffs**, load-shedding/curtailment notices, generation availability, outage/restoration, **RE additions**, interconnections, transmission projects, financing by IFIs, DISCO service updates.
+
+6. **Editorial Guidelines**
+   Keep coverage **Egypt-centric**. Include Israel-related items only if essential to Egypt's grid/logistics; if included, place **last** in its section; strictly factual.
+
+7. **Content Standards**
+   **Facts only.** **All timestamps Africa/Cairo.** Inline links only. Currency: **EGP** for tariffs; **USD** for CAPEX/contracts/PPA (use **USDc/kWh** for PPAs).
+
+---
+
+## **CONTENT STRUCTURE & SECTIONS**
+
+### **A) PRINCIPALS EDITION — Egypt only**
+
+1. **Market Snapshot**
+2. **Policy & Tariffs (Egypt)**
+3. **Generation — Thermal & IPP (Egypt)**
+4. **Renewables — Solar/Wind/Hydro (Egypt)**
+5. **Transmission & Grid Services (Egypt)** — lines/substations + SCADA/EMS/FACTS/HVDC/BESS
+6. **Distribution & Smart Metering (Egypt)**
+7. **Projects & Tenders (Egypt)**
+
+### **B) EGYPTIAN CLIENTS EDITION — Global/Regional, then Egypt**
+
+1. **Market Snapshot**
+2. **Global (light)** — **exactly 3 bullets** (policy/finance/OEM moves with Egypt relevance)
+3. **Regional** — **exactly 3 bullets** (GCC + East Med; avoid Israel unless essential and place last)
+4. **Policy & Tariffs (Egypt)**
+5. **Generation — Thermal & IPP (Egypt)**
+6. **Renewables — Solar/Wind/Hydro (Egypt)**
+7. **Transmission & Grid Services (Egypt)**
+8. **Distribution & Smart Metering (Egypt)**
+9. **Projects & Tenders (Egypt)**
+
+---
+
+## **MARKET SNAPSHOT REQUIREMENTS (both editions)**
+
+**3-Card Grid (top):**
+
+* **System Peak Load (MW)** — latest **24h** or most recent official; include exact value + "as of {HH\:MM Africa/Cairo, DD Mon YYYY}"; **EEHC/EETC** link.
+* **Curtailment Status** — "None" or total **hours** in last **24h/7d** (state period); source: **MoERE/EEHC/EETC**.
+* **RE Share or Capacity** — latest **% of generation** (monthly) **or** cumulative **installed RE (MW)** (NREA/EgyptERA). Include period + link.
+
+**Tariff Mini-Tables (directly under cards):**
+
+* **Residential Tariffs (EGP/kWh)** — **Slab** | **kWh Range** | **Price (EGP/kWh)** | **Notes** (lifeline, planned deferrals).
+* **Industrial/Commercial (EGP/kWh)** — **Voltage Level (MV/HV/EHV)** | **TOU Band (Peak/Off-peak/Shoulder if applicable)** | **Price (EGP/kWh)** | **Notes** (subsidy/rebate/policy date).
+
+*(If any metric lacks fresh official data: write **"insufficient data"** and skip — never estimate.)*
+
+---
+
+## **PER-ITEM BULLET FORMAT (all sections after Market Snapshot)**
+
+Each bullet ≤ **50 words** and includes, where available:
+
+* **Headline** — concise, **inline primary source link** (add a second reputable source only if needed).
+* **Timestamp** — Africa/Cairo.
+* **One-line takeaway** — **MW / MWp / MWh**, **kV**, **km**, **MVA**, **USD capex/contract**, **COD**, **PPA (USDc/kWh)**, **financiers** (IFC/EBRD/etc.).
+* **Counterparties** — owner/operator/EPC/EPCM/OEM/contractors.
+* **Tenders/projects** — entity, **tender ID**, scope & key specs, submission deadline, pre-bid/site visit, stage (**RFI/RFQ/award**).
+* **Principals Edition only:** add **"OEM match: …"** where relevant.
+
+---
+
+## **BULLET COUNTS & FILL RULES**
+
+* **Egypt sections:** **exactly 7 bullets per section**.
+* **Clients Edition extras:** **Global = 3 bullets; Regional = 3 bullets.**
+* If fewer qualifying items exist in the 7-day window, append **"Context:"** bullets using older items **directly tied** to active Egypt developments (e.g., pending interconnection award).
+* **Deduplicate** across sections and editions. Use **"Update:"** only on material change.
+
+---
+
+## **SOURCES & QUALITY STANDARDS**
+
+* **Primary:** MoERE, EEHC, EETC, NREA, EgyptERA, Cabinet decisions, official Distribution Co. channels, EETC procurement.
+* **Secondary:** IEA, IRENA, Ember, MEED, Zawya, Reuters MENA, PV Tech, Windpower Monthly, African Energy.
+* **Tariffs:** Use **official decrees/notices** only.
+* **Data quality:** If weak/unclear, state **"insufficient data."**
+
+---
+
+## **HTML/EMAIL DESIGN OUTPUT SPECIFICATIONS**
+
+**Same design system as Oil & Gas/Transportation** (keep 1:1).
+
+* **Header/Footers:** Gradient **linear-gradient(135deg, #0B3D91 0%, #1F2937 100%)**, white text.
+* **Market Snapshot:** 3-card grid (Peak/Curtailment/RE) then **Tariff Mini-Tables** (two side-by-side; stack on mobile; zebra rows).
+* **News Card System:** **8-color rotation**, 2-column grid, last odd item **full-width**.
+* **EML:** multipart/related; logo **Content-ID: \<aedco-logo>**; inline styles only.
+
+**HTML Doctype & EML MIME skeleton:** unchanged from your base spec.
+
+**File Naming**
+
+* HTML: `[Edition]-Electricity-Newsletter-[DD-Mon-YYYY]-FINAL.html`
+* EML:  `[Edition]-Electricity-Newsletter-[DD-Mon-YYYY]-FINAL.eml`
+
+---
+
+## **MANDATORY OUTPUT FORMAT**
+
+Produce **exactly 4 files** after research:
+
+1. **Principals Edition HTML** (web preview, no logo)
+2. **Principals Edition EML** (email distribution, with logo)
+3. **Egyptian Clients Edition HTML** (web preview, no logo)
+4. **Egyptian Clients Edition EML** (email distribution, with logo)
+
+**Content Preservation Rules (unchanged):**
+
+* Do **not** summarize/delete/merge/split items.
+* Keep section order & bullet counts.
+* Maintain exact figures, names, dates.
+* Each bullet = **one** colored card.
+
+**Quality Assurance:**
+
+* Validate HTML + email safety.
+* Verify 8-color rotation.
+* Confirm 2-column odd/even logic.
+* Check Tariff Mini-Tables render correctly.
+* Ensure EML logo placeholder & MIME correctness.
+
+---
+
+## **PAST ISSUES INTEGRATION**
+
+If `--- PAST_ISSUES_START ---` content is provided, use it for deduplication and **"Update:"** tagging only; **never** to omit current-week content.

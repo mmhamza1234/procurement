@@ -1,0 +1,211 @@
+**COMPREHENSIVE WEEKLY TRANSPORTATION NEWSLETTER GENERATION PROMPT**
+
+***
+
+**USER CONTEXT:**
+
+<topic>Weekly Transportation information-only bullets for TWO editions:
+
+(1) Principals Edition (OEM partners such as Siemens Mobility, Alstom, Hitachi Rail, CRRC, Hyundai Rotem, Thales, CAF, Stadler, Bombardier/Alstom, AFC/SCADA/signaling, electrification, depots, track, bridges & civil packages).
+
+(2) Egyptian Clients Edition (Ministry of Transport, NAT, ENR, CTA, NUCA, GAFI, SCA, port & logistics authorities) — includes light Global and Regional sections before Egypt.</topic>
+
+<scope>Last 7 days, cutoff = "now" (time of generation), Africa/Cairo.</scope>
+
+<audience>Professional readers (executives, technical managers, owners/shareholders).</audience>
+
+***
+
+**RESEARCH & DATA GATHERING TASKS (do in order):**
+
+1) **Historical Analysis:** Read any "Previous Issues" appended after this prompt (see PAST ISSUES block). Extract prior headlines to avoid duplication. Only mark "Update:" if a story materially advanced (e.g., RFP → award, financial close signed, scope expanded, ridership/tariff revised).
+
+2) **Source Research (Transportation-specific):** Research developments within the last 7 days using authoritative sources:
+
+   **Egypt official:** Ministry of Transport (MoT), NAT (Cairo Metro/Monorail), ENR, Cairo Transport Authority (CTA), Suez Canal Authority (SCA), Egyptian Cabinet decisions, CAPMAS, General Authority for Roads, Bridges & Land Transport (GARBLT), Alexandria/Port Said/Damietta Port Authorities, GAFI tenders.
+
+   **Project/tender & filings:** Egyptian Government e-tenders portal, EGX/SEC/ADGM filings of contractors (Orascom Construction, Hassan Allam, Arab Contractors, Elsewedy Electric, etc.).
+
+   **Global/industry:** Railway Gazette, International Railway Journal (IRJ), UITP, MEED, Zawya, Reuters MENA, IATA (aviation stats as relevant), Drewry (container index as relevant).
+
+   **Company PRs & LinkedIn** (operators, EPCs, OEMs).
+   Use official or tier-1 industry sources for fares/tariffs and policy.
+
+3) **Content Compilation:** Compile bullets for TWO editions with the same Egypt sections but different prefaces:
+
+   -  Principals Edition: Egypt-only sections.
+   -  Egyptian Clients Edition: Market Snapshot, then Global (3) and Regional (3), then the Egypt sections.
+
+4) **Principals Edition Emphasis:** Opportunities matching OEM lines (rolling stock, signaling, CBTC/ETCS, electrification & substations, AFC/fare media, PSD, SCADA/telecoms, depots, track/turnouts, bridges & civils, O&M). When relevant, add "OEM match: …" and include owner, scope, stage (RFI/RFQ/award), and bid/close dates if available.
+
+5) **Egyptian Clients Edition Emphasis:** Policy/tariffs, fare changes, ridership/service notices, maintenance outages/restorations, road & bridge packages, port & logistics throughput, Suez Canal updates impacting supply chains, and state-owned company updates.
+
+6) **Editorial Guidelines:** Keep coverage Egypt-centric. Include Israel-related items only if essential to Egypt's transport/logistics; if included, place as the last bullet in its section and keep wording strictly factual.
+
+7) **Content Standards:** Facts only. No forecasts/opinions. All timestamps in Africa/Cairo. Inline links only (no footnotes). Currency: use EGP for domestic fares/tariffs; USD for project capex/contracts and international references.
+
+***
+
+**CONTENT STRUCTURE & SECTIONS:**
+
+**A) PRINCIPALS EDITION — Egypt only**
+1) Market Snapshot
+2) Urban Rail & Metro (Egypt) — Cairo Metro/Monorail/NAT
+3) National Rail (Egypt) — ENR upgrades, signaling, rolling stock, track/bridges
+4) Roads & Bridges (Egypt) — GARBLT/NUCA packages
+5) Ports, Logistics & Suez Canal (Egypt)
+6) Public Transport & BRT (Egypt) — CTA, BRT/express bus, IC cards/AFC
+7) Projects & Tenders (Egypt) — cross-cutting
+
+**B) EGYPTIAN CLIENTS EDITION — Global/Regional, then Egypt**
+1) Market Snapshot
+2) Global (light) — exactly 3 bullets (urban rail, ports/logistics, aviation/rail finance if impactful)
+3) Regional — exactly 3 bullets (prioritize GCC + East Med; avoid Israel unless essential and place last)
+4) Urban Rail & Metro (Egypt)
+5) National Rail (Egypt)
+6) Roads & Bridges (Egypt)
+7) Ports, Logistics & Suez Canal (Egypt)
+8) Public Transport & BRT (Egypt)
+9) Projects & Tenders (Egypt)
+
+***
+
+**MARKET SNAPSHOT REQUIREMENTS (both editions):**
+
+**Cards (3-column grid):**
+
+-  **Fuel Prices (Egypt):** Diesel (10 ppm) and Gasoline 92 in EGP/L — include exact prices, timestamp "as of {HH:MM Africa/Cairo, DD Mon YYYY}", official source link (Automatic Pricing Committee/MoP).
+
+-  **Mobility Indicator (Cairo):** TomTom congestion index (%) and city rank OR Cairo Metro daily ridership (latest official figure) — include timestamp + source link.
+
+-  **Logistics Indicator:** Suez Canal daily transits (7-day avg) OR latest monthly container throughput (Alexandria/Port Said/Damietta) — include figure, period, and source link.
+
+**Fares Mini-Tables (Transportation only; placed directly under the 3 cards):**
+
+-  **Cairo Metro Fares (EGP)** — Band | KM Range | Adult Price (EGP) | Notes (students/seniors/disabled if officially stated). Use NAT/Metro official notices.
+
+-  **ENR "Cairo Inside" / Suburban Fares (EGP)** — Route | Class | Price (EGP) | Notes (if zonal or promo fares). Use ENR official notices.
+
+(If any metric lacks fresh official data, state "insufficient data" and skip that metric rather than estimate.)
+
+***
+
+**PER-ITEM BULLET FORMAT (all sections after Market Snapshot):**
+
+Each bullet ≤ 50 words and must contain, where available:
+
+-  **Headline** (concise) — inline source link (primary; add a second reputable source only if needed).
+-  **Timestamp** (Africa/Cairo).
+-  **One-line takeaway** with key numbers (km, trains/coaches, tph, ETCS level, substation MVA, capex USD, contract value USD, timeline/milestones, location/line/section).
+-  **Counterparties** (owner/operator/EPC/EPCM/OEM/contractors).
+-  **For tenders/projects:** entity, tender ID, scope & key specs, submission deadline, pre-bid/site visit dates, stage (RFI/RFQ/award). Add "OEM match: …" when relevant (Principals Edition).
+
+***
+
+**BULLET COUNTS & FILL RULES:**
+
+-  **Egypt sections:** exactly 7 bullets per section.
+-  **Clients Edition extras:** Global = 3 bullets; Regional = 3 bullets.
+-  **If fewer qualifying items exist** in the 7-day window, append "Context:" bullets (clearly labeled) using items older than 7 days that are directly relevant to an active Egypt development (e.g., pending award, tariff consultation).
+-  **Deduplication:** Apply across all sections and both editions. Use "Update:" only on material change.
+
+***
+
+**SOURCES & QUALITY STANDARDS:**
+
+-  **Primary sources preferred:** Official releases, filings, tender portals. Otherwise use Railway Gazette, IRJ, UITP, MEED, Zawya, Reuters MENA.
+-  **Fares & policy:** Use NAT/ENR/CTA/MoT announcements or Egyptian Cabinet decisions only.
+-  **Mobility index:** TomTom (latest weekly/city).
+-  **Logistics indicator:** SCA (daily transits) or port authority throughput; do not compute your own averages beyond stated 7-day mean for SCA.
+-  **Data quality:** If data is weak/unclear, state "insufficient data" and skip.
+
+***
+
+**HTML/EMAIL DESIGN OUTPUT SPECIFICATIONS:**
+
+**Overall Structure (unchanged from Oil & Gas):**
+
+-  Modern, professional newsletter; system fonts (-apple-system, 'Segoe UI', Roboto, Arial)
+-  Responsive, email-safe CSS; Background #f8f9fa; main container white, rounded, shadow; max-width 700px, centered.
+
+**Header:**
+
+-  Gradient: linear-gradient(135deg, #0B3D91 0%, #1F2937 100%); white text.
+-  HTML Version: Edition title only.
+-  EML Version: AEDCO logo + Edition title (logo tag preserved):
+
+`<img src="cid:aedco-logo" alt="AEDCO" style="width:120px;height:auto;margin-bottom:15px;">`
+
+**Market Snapshot:**
+
+-  Top: 3-card grid (Fuel, Mobility, Logistics).
+-  Below cards: Fares Mini-Tables block with two side-by-side tables (stacked on mobile). Headings with small icons allowed (emoji or inline SVG), rows zebra-striped, tight padding.
+
+**News Card System:**
+
+-  Each news item = its own colored card, 8-color rotation (same palette as Oil & Gas):
+
+Blue #0B3D91/#eff6ff, Green #10b981/#f0fdf4, Orange #f59e0b/#fef7f0, Red #ef4444/#fef2f2, Purple #8b5cf6/#f5f3ff, Cyan #06b6d4/#f0f9ff, Yellow #eab308/#fefce8, Blue variant #3b82f6/#eff6ff.
+
+-  Layout logic (critical): 2-column grid; if odd count, last item full width.
+
+**News Item Formatting:**
+
+-  4px colored left border; light background gradient; Title 16px bold #0B3D91, content 15px #374151, padding 20px, radius 12px.
+
+**Section Headers:**
+
+-  Large blue headings (#0B3D91) + short italic descriptions.
+
+**Footer:**
+
+-  Same gradient as header; edition name, date, confidentiality notice; centered white text.
+
+**EML-Specific:**
+
+-  multipart/related; logo Content-ID: <aedco-logo> with base64 placeholder; inline styles only.
+
+***
+
+**TECHNICAL BOILERPLATE:**
+
+HTML doctype & structure and EML MIME skeleton remain identical to the Oil & Gas spec.
+
+**File Naming:**
+
+-  HTML: `[Edition]-Transportation-Newsletter-[DD-Mon-YYYY]-FINAL.html`
+-  EML: `[Edition]-Transportation-Newsletter-[DD-Mon-YYYY]-FINAL.eml`
+
+***
+
+**MANDATORY OUTPUT FORMAT:**
+
+After completing research and content gathering, output exactly 4 files:
+
+1. **Principals Edition HTML** (web preview, no logo)
+2. **Principals Edition EML** (email distribution, with logo)
+3. **Egyptian Clients Edition HTML** (web preview, no logo)
+4. **Egyptian Clients Edition EML** (email distribution, with logo)
+
+**Content Preservation Rules (unchanged):**
+
+-  NEVER summarize, delete, or change any gathered content
+-  NEVER modify section order or bullet counts
+-  NEVER merge or split news items
+-  NEVER alter headlines or facts
+-  Each bullet becomes exactly one colored card
+-  Maintain all technical details, dates, figures, and company names exactly as researched
+
+**Quality Assurance (unchanged + fares block checks):**
+
+-  Validate HTML + email compatibility
+-  Verify 8-color rotation
+-  Confirm 2-column odd/even behavior
+-  Check Fares Mini-Tables render side-by-side (stack on mobile)
+-  Ensure EML includes logo placeholder & correct MIME structure
+
+***
+
+**PAST ISSUES INTEGRATION:**
+
+If content after "--- PAST_ISSUES_START ---" is provided, use it for deduplication and "Update:" marking but NEVER to omit current week content.
