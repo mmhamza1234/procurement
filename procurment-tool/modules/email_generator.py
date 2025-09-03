@@ -11,12 +11,12 @@ class EmailGenerator:
     def __init__(self):
         self.default_footer = """
 Regards,
-Nesreen Moustafa
+Hamada Tool
 Procurement Manager
 Arab Engineering & Distribution Company
 Building B2 Mivida Business Park 90 St. 5th Settlement • Cairo, Egypt
 +20100 0266 344 | +202 2322 8800
-nmoustafa@aedco.com.eg
+hamada@aedco.com.eg
 www.aedco.com"""
     
     def generate_emails(self, suppliers_df: pd.DataFrame, project_details: Dict[str, Any]) -> List[Dict[str, str]]:
